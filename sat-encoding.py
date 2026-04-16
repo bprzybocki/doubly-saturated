@@ -10,7 +10,6 @@ from pysat.card import CardEnc, EncType
 from pysat.formula import CNF, IDPool
 from pysat.solvers import Solver
 
-from sat_indep_number import check_indep_number
 
 def normalize_pair(u: int, v: int) -> tuple[int, int]:
     if u == v:
@@ -268,7 +267,6 @@ def main() -> int:
                 for u, v in edges:
                     adj.setdefault(u, set()).add(v)
                     adj.setdefault(v, set()).add(u)
-                print(check_indep_number(adj, args.t-1))
 
     return 0
 
